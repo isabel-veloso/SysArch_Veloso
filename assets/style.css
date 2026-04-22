@@ -1,0 +1,699 @@
+/* =============================================
+   UC CCS Sit-in Monitoring System
+   style.css
+   ============================================= */
+
+/* ── Color Variables ── */
+:root {
+    --uc-blue:    #003366;
+    --ccs-purple: #5c2c90;
+    --ccs-gold:   #c5a059;
+    --bg-light:   #f0f2f5;
+    --border:     #e9ecef;
+    --text-muted: #6c757d;
+}
+
+/* ── Base ── */
+body {
+    background: var(--bg-light);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar-uc {
+    background: var(--uc-blue);
+    padding: 12px 0;
+    width: 100%;
+}
+
+.navbar-brand-text {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-link-uc {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link-uc:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link-uc.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.nav-link-logout {
+    color: var(--ccs-gold) !important;
+}
+
+.nav-link-logout:hover {
+    color: white !important;
+    background: rgba(197, 160, 89, 0.2);
+}
+
+/* =============================================
+   LOGIN / REGISTER PAGE
+   ============================================= */
+.login-container {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 95%;
+    display: flex;
+    margin: 60px auto;
+}
+
+.branding-side {
+    background: linear-gradient(155deg, var(--uc-blue) 0%, var(--ccs-purple) 100%);
+    padding: 48px 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    text-align: center;
+}
+
+.logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.uni-logo {
+    width: 90px;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+.logo-divider {
+    width: 1.5px;
+    height: 70px;
+    background: linear-gradient(to bottom, transparent, var(--ccs-gold), transparent);
+    opacity: 0.7;
+}
+
+.dept-logo {
+    width: 90px;
+    mix-blend-mode: lighten;
+}
+
+.tagline {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--ccs-gold);
+    opacity: 0.85;
+    text-transform: uppercase;
+}
+
+.form-side {
+    padding: 40px 48px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.form-side h2 {
+    color: var(--uc-blue);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn-primary-uc {
+    background: var(--uc-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary-uc:hover {
+    background: var(--ccs-purple);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(92, 44, 144, 0.3);
+}
+
+.btn-outline-uc {
+    background: white;
+    color: var(--uc-blue);
+    border: 1.5px solid var(--uc-blue);
+    padding: 6px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline-uc:hover {
+    background: var(--uc-blue);
+    color: white;
+}
+
+.btn-danger-uc {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.btn-danger-uc:hover {
+    background: #b02a37;
+    color: white;
+}
+
+.btn-delete-ann {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+.btn-delete-ann:hover {
+    color: #b02a37;
+}
+
+.btn-sm {
+    padding: 4px 12px !important;
+    font-size: 0.8rem !important;
+}
+
+/* =============================================
+   FORM INPUTS
+   ============================================= */
+.form-control {
+    border-radius: 8px;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    font-size: 0.9rem;
+}
+
+.form-control:focus {
+    background: white;
+    border-color: var(--ccs-gold);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+    outline: none;
+}
+
+select.form-control {
+    cursor: pointer;
+}
+
+.readonly-input {
+    background: var(--bg-light) !important;
+    color: #8a8f99 !important;
+    cursor: not-allowed;
+}
+
+.input-group .form-control {
+    border-right: none;
+}
+
+.input-group .btn-outline-secondary {
+    border: 1px solid var(--border);
+    border-left: none;
+    background: #f8f9fa;
+    color: var(--text-muted);
+    border-radius: 0 8px 8px 0;
+    transition: background 0.2s;
+}
+
+.input-group .btn-outline-secondary:hover {
+    background: #e9ecef;
+    color: #333;
+}
+
+.input-group .form-control:focus {
+    border-right: none;
+    box-shadow: none;
+}
+
+.input-group:focus-within .btn-outline-secondary {
+    border-color: var(--ccs-gold);
+}
+
+/* =============================================
+   ALERTS
+   ============================================= */
+.alert {
+    border-radius: 8px;
+    font-size: 0.88rem;
+    padding: 10px 14px;
+    border: none;
+    margin-bottom: 16px;
+}
+
+.alert-success {
+    background: #d1edde;
+    color: #0f5132;
+    border-left: 4px solid #198754;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #842029;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #664d03;
+    border-left: 4px solid #ffc107;
+}
+
+.alert-info {
+    background: #cff4fc;
+    color: #055160;
+    border-left: 4px solid #0dcaf0;
+}
+
+/* =============================================
+   PAGE WRAPPER
+   ============================================= */
+.page-wrapper {
+    width: 100%;
+    padding: 32px 20px 60px;
+}
+
+.page-title {
+    color: var(--uc-blue);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* =============================================
+   CARDS
+   ============================================= */
+.card-uc {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.card-uc-header {
+    background: var(--uc-blue);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 13px 20px;
+    letter-spacing: 0.02em;
+}
+
+.card-uc-body {
+    padding: 24px;
+}
+
+/* =============================================
+   STUDENT INFO (homepage)
+   ============================================= */
+.student-avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.student-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    border: 2px dashed #ced4da;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-avatar-placeholder {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--uc-blue);
+}
+
+.student-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.student-info-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--bg-light);
+    font-size: 0.88rem;
+    color: #444;
+}
+
+.student-info-list li:last-child {
+    border-bottom: none;
+}
+
+/* =============================================
+   PROFILE PICTURE
+   ============================================= */
+.profile-pic-preview {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px dashed #ced4da;
+    background: var(--bg-light);
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+}
+
+/* =============================================
+   ANNOUNCEMENTS
+   ============================================= */
+.announcements-scroll-area {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.announcement-item {
+    background: var(--bg-light);
+    border-left: 3px solid var(--uc-blue);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+}
+
+.announcement-item:last-child {
+    margin-bottom: 0;
+}
+
+.announcement-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Rules scroll area — matches announcements height */
+.rules-scroll-area {
+    max-height: 420px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--ccs-purple) #f0f2f5;
+}
+ 
+/* Numbered rules list */
+.rules-list {
+    padding-left: 1.2rem;
+    margin: 0;
+    font-size: 0.85rem;
+}
+ 
+.rules-list li {
+    margin-bottom: 0.65rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Equal-height cards on homepage */
+.row.align-items-stretch .card-uc {
+    height: 100%;
+}
+
+.announcements-scroll-area,
+.rules-scroll-area {
+    height: 500px;
+    max-height: 500px;
+}
+
+/* =============================================
+   TABLES
+   ============================================= */
+.table-uc {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.table-uc thead tr {
+    background-color: transparent;
+    border-bottom: 2px solid var(--border);
+}
+
+.table-uc thead th {
+    padding: 12px 16px;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.table-uc tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+
+.table-uc tbody tr:last-child {
+    border-bottom: none;
+}
+
+.table-uc tbody tr:hover {
+    background-color: #f8f9fb;
+}
+
+.table-uc tbody td {
+    padding: 12px 16px;
+    vertical-align: middle;
+    color: #333;
+}
+
+/* =============================================
+   MODALS  ← single clean definition
+   ============================================= */
+.modal-overlay {
+    display: none;                      /* hidden by default */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-overlay.active {
+    display: flex;                      /* shown when .active is added */
+}
+
+.modal-box {
+    background: #fff;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--uc-blue);
+    border-bottom: 1px solid var(--border);
+    background: #fff;
+}
+
+.modal-box-body {
+    padding: 24px;
+}
+
+/* Modal field: label stacked above input */
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.modal-field label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.modal-field textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    color: #333;
+    background: #f8f9fb;
+    resize: vertical;
+    min-height: 120px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+
+.modal-field textarea:focus {
+    border-color: var(--uc-blue);
+    background: #fff;
+}
+
+.modal-close {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+    transition: background 0.2s;
+}
+
+.modal-close:hover {
+    background: var(--bg-light);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* =============================================
+   NOTIFICATIONS
+   ============================================= */
+.notif-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #dc3545;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.65rem;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.notif-item {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--bg-light);
+    font-size: 0.88rem;
+}
+
+.notif-item:last-child {
+    border-bottom: none;
+}
+
+.notif-unread {
+    background: #f0f4ff;
+    border-left: 3px solid var(--uc-blue);
+}
+
+.notif-icon {
+    margin-right: 8px;
+}
+
+/* =============================================
+   STATISTICS
+   ============================================= */
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--uc-blue);
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+/* =============================================
+   LINKS
+   ============================================= */
+.link-purple {
+    color: var(--ccs-purple);
+    text-decoration: none;
+}
+
+.link-purple:hover {
+    color: var(--ccs-gold);
+}
+
+/* =============================================
+   MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .branding-side,
+    .form-side {
+        width: 100%;
+        padding: 32px 24px;
+    }
+}
